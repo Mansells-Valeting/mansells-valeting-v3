@@ -86,6 +86,7 @@ ul, ol {
   font-family: inherit;
   text-decoration: none;
   cursor: pointer;
+  white-space: nowrap;
   transition: opacity .15s, transform .15s;
 }
 
@@ -147,7 +148,7 @@ ul, ol {
   font-weight: 500;
 }
 
-.nav a { text-decoration: none; }
+.nav a { text-decoration: none; white-space: nowrap; }
 .nav a:hover { text-decoration: underline; }
 
 .header-actions {
@@ -161,6 +162,7 @@ ul, ol {
   font-size: .875rem;
   font-weight: 700;
   text-decoration: none;
+  white-space: nowrap;
 }
 
 /* ---------- Hero ---------- */
@@ -186,7 +188,7 @@ ul, ol {
 }
 
 .hero-title {
-  font-size: 3rem;
+  font-size: clamp(3rem, 1.25rem + 5.2vw, 4.5rem);
   font-weight: 700;
   line-height: 1.02;
   letter-spacing: -.025em;
@@ -268,7 +270,7 @@ ul, ol {
 /* ---------- Shared section bits ---------- */
 
 .section-title {
-  font-size: 2.25rem;
+  font-size: clamp(2.25rem, 1.25rem + 2.2vw, 3rem);
   font-weight: 700;
 }
 
@@ -558,14 +560,18 @@ ul, ol {
 .faq-item summary::-webkit-details-marker { display: none; }
 
 .faq-icon {
-  display: grid;
-  place-items: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   flex-shrink: 0;
   margin-left: 1rem;
   width: 1.75rem;
   height: 1.75rem;
   border: 1px solid var(--border);
   border-radius: 9999px;
+  line-height: 1;
+  font-size: 1rem;
+  padding-bottom: 2px;
   transition: rotate .15s, background-color .15s, color .15s;
 }
 
@@ -605,7 +611,7 @@ ul, ol {
 }
 
 .booking-title {
-  font-size: 2.25rem;
+  font-size: clamp(2.25rem, 1rem + 4vw, 3.75rem);
   font-weight: 700;
 }
 
@@ -735,8 +741,6 @@ ul, ol {
 /* ---------- Breakpoints ---------- */
 
 @media (min-width: 640px) {
-  .header-phone { display: block; }
-
   .services-grid {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -749,14 +753,12 @@ ul, ol {
 }
 
 @media (min-width: 768px) {
-  .nav { display: flex; }
+  .nav { display: flex; gap: 1rem; }
 
   .hero-grid {
     grid-template-columns: 1.1fr 1fr;
-    padding-block: 5rem;
+    padding-block: 4rem;
   }
-
-  .hero-title { font-size: 4.5rem; }
 
   .why-grid { grid-template-columns: 1fr 1.4fr; }
 
@@ -767,12 +769,14 @@ ul, ol {
   .reviews-grid { grid-template-columns: repeat(2, 1fr); }
 
   .booking-grid { grid-template-columns: 1fr 1.3fr; }
-
-  .booking-title { font-size: 3.75rem; }
-
-  .section-title { font-size: 3rem; }
 }
 
 @media (min-width: 1024px) {
+  .nav { gap: 1.5rem; }
+
+  .header-phone { display: block; }
+
+  .hero-grid { padding-block: 5rem; }
+
   .services-grid { grid-template-columns: repeat(3, 1fr); }
 }
