@@ -367,6 +367,8 @@ ul, ol {
   box-shadow: var(--hard-shadow);
 }
 
+
+
 .service-card-popular { background-color: var(--sun); }
 
 .popular-badge {
@@ -416,6 +418,7 @@ ul, ol {
 .service-btn {
   justify-content: center;
   margin-top: 1.5rem;
+  outline: 2px solid #000000;
 }
 
 .service-card-dashed {
