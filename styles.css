@@ -367,7 +367,9 @@ ul, ol {
   box-shadow: var(--hard-shadow);
 }
 
-
+.service-card:not(.service-card-dashed):hover {
+  box-shadow: 16px 24px 48px -16px oklch(30% .1 260/.35);
+}
 
 .service-card-popular { background-color: var(--sun); }
 
